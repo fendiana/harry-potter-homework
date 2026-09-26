@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>harry-potter-homework</title>
+  </head>
+  <body>
+    <main>
+      <section class="hero-section">
+        <div class="container hero-section__container">
+          <h1 class="hero-section__title">
+            Ласкаво просимо <br />у світ Гаррі Поттера
+          </h1>
+          <button class="hero-section__btn">Показати всіх персонажів</button>
+        </div>
+      </section>
+      <section class="characters-section">
+        <div class="container characters-section__container">
+          <ul class="characters-type-list">
+            <li class="characters-type-card">
+              <img
+                class="characters-type-img"
+                src="/src/assets/type-students-card.jpg"
+                srcset="
+                  /src/assets/type-students-card.jpg    1x,
+                  /src/assets/type-students-card@2x.jpg 2x
+                "
+                alt="Студенти Гоґвортсу"
+              />
+              <button class="characters-type-btn">Студенти Гоґвортсу</button>
+            </li>
+            <li class="characters-type-card">
+              <img
+                class="characters-type-img"
+                src="/src/assets/type-employees-card.jpg"
+                srcset="
+                  /src/assets/type-employees-card.jpg    1x,
+                  /src/assets/type-employees-card@2x.jpg 2x
+                "
+                alt="Співробітники Гоґвортсу"
+              />
+              <button class="characters-type-btn">
+                Співробітники Гоґвортсу
+              </button>
+            </li>
+            <li class="characters-type-card">
+              <img
+                class="characters-type-img"
+                src="/src/assets/type-by-faculty-card.jpg"
+                srcset="
+                  /src/assets/type-by-faculty-card.jpg    1x,
+                  /src/assets/type-by-faculty-card@2x.jpg 2x
+                "
+                alt="Персонажі в певному будинку"
+              />
+              <button class="characters-type-btn">
+                Персонажі в певному будинку
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="characters-grid-section" id="characters-grid-section">
+        <div class="container characters-grid-section__container">
+          <h2 class="section-title">Студенти Гоґвортсу</h2>
+          <ul class="characters-grid" id="characters-grid">
+            <li class="characters-grid-card">
+              <img
+                class="card-img"
+                src="/src/assets/harry-potter.jpg"
+                alt="Harry Potter"
+              />
+              <h3 class="card-title" lang="en">Harry Potter</h3>
+              <div class="card-text">
+                <p>The Boy Who Lived</p>
+                <p>Gryffindor</p>
+                <p>31-07-1980</p>
+              </div>
+              <div class="card-more-info">
+                <p>Більше інформації</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
