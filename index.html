@@ -14,7 +14,9 @@
           <h1 class="hero-section__title">
             Ласкаво просимо <br />у світ Гаррі Поттера
           </h1>
-          <button class="hero-section__btn">Показати всіх персонажів</button>
+          <button type="button" class="hero-section__btn">
+            Показати всіх персонажів
+          </button>
         </div>
       </section>
       <section class="characters-section">
@@ -30,7 +32,9 @@
                 "
                 alt="Студенти Гоґвортсу"
               />
-              <button class="characters-type-btn">Студенти Гоґвортсу</button>
+              <button type="button" class="characters-type-btn">
+                Студенти Гоґвортсу
+              </button>
             </li>
             <li class="characters-type-card">
               <img
@@ -42,7 +46,7 @@
                 "
                 alt="Співробітники Гоґвортсу"
               />
-              <button class="characters-type-btn">
+              <button type="button" class="characters-type-btn">
                 Співробітники Гоґвортсу
               </button>
             </li>
@@ -56,7 +60,7 @@
                 "
                 alt="Персонажі в певному будинку"
               />
-              <button class="characters-type-btn">
+              <button type="button" class="characters-type-btn">
                 Персонажі в певному будинку
               </button>
             </li>
@@ -66,28 +70,100 @@
       <section class="characters-grid-section" id="characters-grid-section">
         <div class="container characters-grid-section__container">
           <h2 class="section-title">Студенти Гоґвортсу</h2>
-          <ul class="characters-grid" id="characters-grid">
-            <li class="characters-grid-card">
+          <div class="faculty-filter is-hidden" id="faculty-filter">
+            <button class="faculty-btn active" data-faculty="gryffindor">
               <img
-                class="card-img"
-                src="/src/assets/harry-potter.jpg"
-                alt="Harry Potter"
+                class="faculty-btn-icon"
+                src="/src/assets/gryffindor-logo.svg"
+                alt="Gryffindor logo"
               />
-              <h3 class="card-title" lang="en">Harry Potter</h3>
-              <div class="card-text">
-                <p>The Boy Who Lived</p>
-                <p>Gryffindor</p>
-                <p>31-07-1980</p>
+              <span>Gryffindor</span>
+            </button>
+            <button class="faculty-btn" data-faculty="slytherin">
+              <img
+                class="faculty-btn-icon"
+                src="/src/assets/slytherin-logo.svg"
+                alt="Slytherin logo"
+              />
+              <span>Slytherin</span>
+            </button>
+            <button class="faculty-btn" data-faculty="ravenclaw">
+              <img
+                class="faculty-btn-icon"
+                src="/src/assets/ravenclaw-logo.svg"
+                alt="Ravenclaw logo"
+              />
+              <span>Ravenclaw</span>
+            </button>
+            <button class="faculty-btn" data-faculty="hufflepuff">
+              <img
+                class="faculty-btn-icon"
+                src="/src/assets/hufflepuff-logo.svg"
+                alt="Hufflepuff logo"
+              />
+              <span>Hufflepuff</span>
+            </button>
+          </div>
+          <ul class="characters-grid" id="characters-grid">
+            <!-- <li class="characters-grid-card">
+              <div class="card-front">
+                <img
+                  class="card-img"
+                  src="/src/assets/harry-potter.jpg"
+                  alt="Harry Potter"
+                />
+                <h3 class="card-title" lang="en">Harry Potter</h3>
+                <div class="card-text">
+                  <p>The Boy Who Lived</p>
+                  <p>Gryffindor</p>
+                  <p>31-07-1980</p>
+                </div>
+                <button type="button" class="card-more-btn">
+                  <span>Більше інформації</span>
+                  <img
+                    src="/src/assets/arrow-right.svg"
+                    alt="Arrow right with a yellow circle"
+                  />
+                </button>
               </div>
-              <div class="card-more-info">
-                <p>Більше інформації</p>
+              <div class="card-back">
+                <ul class="card-details-list">
+                  <li>Name: <span>Harry Potter</span></li>
+                  <li>
+                    Alternate names:
+                    <span>The Boy Who Lived, The Chosen One</span>
+                  </li>
+                  <li>Species: <span>Human</span></li>
+                  <li>Gend: <span>Male</span></li>
+                  <li>House: <span>Gryffindor</span></li>
+                  <li>Date of birth: <span>31-07-1980</span></li>
+                  <li>Year of birth: <span>1980</span></li>
+                  <li>Wizard: <span>True</span></li>
+                  <li>Ancestry: <span>Half-blood</span></li>
+                  <li>Eye colour: <span>Green</span></li>
+                  <li>Hair colour: <span>Black</span></li>
+                  <li>
+                    Wand:
+                    <span>
+                      Wood : holly, core : phoenix feather, length : 11
+                    </span>
+                  </li>
+                  <li>Patronus: <span>Stag</span></li>
+                  <li>Hogwarts student: <span>True</span></li>
+                  <li>Hogwarts staff: <span>False</span></li>
+                  <li>Actor: <span>Daniel Radcliff</span></li>
+                  <li>Alive: <span>True</span></li>
+                </ul>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </section>
     </main>
 
     <script type="module" src="/src/main.js"></script>
+    <div class="lumos-container">
+      <div class="lumos-sparkle"></div>
+    </div>
   </body>
 </html>
