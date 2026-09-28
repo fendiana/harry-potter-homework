@@ -14,14 +14,14 @@
           <h1 class="hero-section__title">
             Ласкаво просимо <br />у світ Гаррі Поттера
           </h1>
-          <button type="button" class="hero-section__btn">
+          <button type="button" class="hero-section__btn" id="hero-section-btn">
             Показати всіх персонажів
           </button>
         </div>
       </section>
-      <section class="characters-section">
-        <div class="container characters-section__container">
-          <ul class="characters-type-list">
+      <section class="categories-section is-hidden" id="categories-section">
+        <div class="container categories-section__container">
+          <ul class="categories-list">
             <li class="characters-type-card">
               <img
                 class="characters-type-img"
@@ -32,7 +32,11 @@
                 "
                 alt="Студенти Гоґвортсу"
               />
-              <button type="button" class="characters-type-btn">
+              <button
+                type="button"
+                class="characters-type-btn"
+                id="students-btn"
+              >
                 Студенти Гоґвортсу
               </button>
             </li>
@@ -46,7 +50,11 @@
                 "
                 alt="Співробітники Гоґвортсу"
               />
-              <button type="button" class="characters-type-btn">
+              <button
+                type="button"
+                class="characters-type-btn"
+                id="employees-btn"
+              >
                 Співробітники Гоґвортсу
               </button>
             </li>
@@ -60,15 +68,19 @@
                 "
                 alt="Персонажі в певному будинку"
               />
-              <button type="button" class="characters-type-btn">
+              <button
+                type="button"
+                class="characters-type-btn"
+                id="faculties-btn"
+              >
                 Персонажі в певному будинку
               </button>
             </li>
           </ul>
         </div>
       </section>
-      <section class="characters-grid-section" id="characters-grid-section">
-        <div class="container characters-grid-section__container">
+      <section class="characters-section is-hidden" id="characters-section">
+        <div class="container characters-section__container">
           <h2 class="section-title">Студенти Гоґвортсу</h2>
           <div class="faculty-filter is-hidden" id="faculty-filter">
             <button class="faculty-btn active" data-faculty="gryffindor">

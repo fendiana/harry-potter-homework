@@ -1,9 +1,68 @@
+const categoriesSection = document.querySelector("#categories-section");
+const charactersSection = document.querySelector("#characters-section");
+const sectionTitle = document.querySelector(".section-title");
 const charactersGrid = document.querySelector(".characters-grid");
+const facultyFilter = document.querySelector("#faculty-filter");
 
-async function getCharacters() {
-  const response = await fetch(
-    "https://hp-api.onrender.com/api/characters/students",
-  );
+const charactersTypeBtn = document.querySelector("#hero-section-btn");
+const studentsBtn = document.querySelector("#students-btn");
+const employeesBtn = document.querySelector("#employees-btn");
+const facultiesBtn = document.querySelector("#faculties-btn");
+const facultyBtn = document.querySelectorAll(".faculty-btn");
+
+charactersTypeBtn.addEventListener("click", () => {
+  categoriesSection.classList.remove("is-hidden");
+
+  categoriesSection.scrollIntoView({ behavior: "smooth" });
+});
+
+studentsBtn.addEventListener("click", () => {
+  charactersSection.classList.remove("is-hidden");
+  facultyFilter.classList.add("is-hidden");
+
+  charactersSection.scrollIntoView({ behavior: "smooth" });
+
+  getCharacters("characters/students", "Студенти Гоґвортсу");
+});
+
+employeesBtn.addEventListener("click", () => {
+  charactersSection.classList.remove("is-hidden");
+  facultyFilter.classList.add("is-hidden");
+
+  charactersSection.scrollIntoView({ behavior: "smooth" });
+
+  getCharacters("characters/staff", "Співробітники Гоґвортсу");
+});
+
+facultiesBtn.addEventListener("click", () => {
+  charactersSection.classList.remove("is-hidden");
+  facultyFilter.classList.remove("is-hidden");
+
+  charactersSection.scrollIntoView({ behavior: "smooth" });
+
+  getCharacters("characters/house/gryffindor", "Персонажі в певному будинку");
+});
+
+facultyBtn.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    const facultyName = event.currentTarget.dataset.faculty;
+
+    facultyBtn.forEach((item) => item.classList.remove("active"));
+    event.currentTarget.classList.add("active");
+
+    getCharacters(
+      `characters/house/${facultyName}`,
+      "Персонажі в певному будинку",
+    );
+  });
+});
+
+async function getCharacters(endpoint, titleText) {
+  if (titleText) {
+    sectionTitle.textContent = titleText;
+  }
+
+  const response = await fetch(`https://hp-api.onrender.com/api/${endpoint}`);
   const data = await response.json();
 
   drawCards(data.slice(0, 8));
@@ -70,4 +129,4 @@ function drawCards(character) {
   charactersGrid.innerHTML = htmlCards;
 }
 
-getCharacters();
+getCharacters("characters/students", "Студенти Гоґвортсу");

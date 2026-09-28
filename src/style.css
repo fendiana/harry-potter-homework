@@ -275,24 +275,24 @@ ul {
   transform: scale(0.98);
 }
 
-/* Characters Section */
-.characters-section {
+/* Categories Section */
+.categories-section {
   padding-bottom: 100px;
 }
 
 @media (max-width: 768px) {
-  .characters-section {
+  .categories-section {
     padding: 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .characters-section {
+  .categories-section {
     padding: 40px;
   }
 }
 
-.characters-type-list {
+.categories-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -381,9 +381,15 @@ ul {
   }
 }
 
-/* Characters list section */
-.characters-grid-section {
+/* Characters section */
+.characters-section {
   padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .characters-section__container {
+    gap: 16px;
+  }
 }
 
 .characters-grid {
@@ -391,12 +397,6 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .characters-grid-section__container {
-    gap: 16px;
-  }
 }
 
 .characters-grid-card {
@@ -417,12 +417,17 @@ ul {
   );
   border-radius: 16px;
   overflow: hidden;
+  transition: box-shadow 0.4s;
 }
 
 @media (max-width: 768px) {
   .characters-grid-card {
     padding: 20px;
   }
+}
+
+.characters-grid-card:hover {
+  box-shadow: 0 0 25px 5px rgba(238, 172, 19, 0.6);
 }
 
 .card-img {
@@ -538,7 +543,8 @@ ul {
   align-items: center;
   flex: 1;
   gap: 10px;
-  padding: 10px 76px;
+  /* padding: 10px 76px; */
+  padding: 10px clamp(5px, 4vw, 76px);
   font-family: var(--hp-accent-font-family);
   font-weight: 700;
   font-size: 18px;
@@ -560,4 +566,43 @@ ul {
   margin: -1px;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .faculty-btn {
+    padding: 8px clamp(5px, 2vw, 30px);
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .faculty-btn-icon {
+    height: 30px;
+    width: 33px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faculty-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .faculty-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-filter {
+    margin-bottom: 30px;
+  }
+
+  .faculty-btn {
+    padding: 10px;
+  }
+
+  .faculty-btn-icon {
+    height: 24px;
+    width: 26px;
+  }
 }
