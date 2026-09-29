@@ -84,10 +84,17 @@ ul {
   margin-bottom: 70px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section-title {
     margin-bottom: 64px;
-    font-size: 56px;
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 60px;
+    font-size: 54px;
   }
 }
 
@@ -100,6 +107,19 @@ ul {
 
 .is-hidden {
   display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Lumos Sparkle */
@@ -407,14 +427,6 @@ ul {
   height: 452px;
   width: 100%;
   max-width: 294px;
-  padding: 24px;
-  background: linear-gradient(
-    0deg,
-    #0f0f0f -1.51%,
-    rgba(15, 15, 15, 0.85) 25%,
-    rgba(15, 15, 15, 0.4) 45%,
-    rgba(15, 15, 15, 0) 55%
-  );
   border-radius: 16px;
   overflow: hidden;
   transition: box-shadow 0.4s;
@@ -422,7 +434,8 @@ ul {
 
 @media (max-width: 768px) {
   .characters-grid-card {
-    padding: 20px;
+    height: auto;
+    aspect-ratio: 294/452;
   }
 }
 
@@ -440,6 +453,13 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
+}
+
+.card-title,
+.card-text,
+.card-more-btn {
+  position: relative;
+  z-index: 3;
 }
 
 .card-title {
@@ -469,6 +489,10 @@ ul {
   .card-text {
     font-size: 14px;
   }
+
+  .card-more-btn span {
+    font-size: 14px;
+  }
 }
 
 .card-more-btn {
@@ -486,7 +510,27 @@ ul {
 }
 
 .card-front {
+  padding: 24px;
   transition: opacity 0.4s;
+}
+
+.card-front::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    #0f0f0f -1.51%,
+    rgba(15, 15, 15, 0.85) 25%,
+    rgba(15, 15, 15, 0.4) 45%,
+    rgba(15, 15, 15, 0) 55%
+  );
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .card-back {
@@ -501,6 +545,7 @@ ul {
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
+  z-index: 10;
   transition: opacity 0.4s;
 }
 
@@ -535,6 +580,7 @@ ul {
   margin: 0 auto 50px auto;
   border: 1px solid var(--hp-text-color);
   border-radius: 100px;
+  overflow: hidden;
 }
 
 .faculty-btn {

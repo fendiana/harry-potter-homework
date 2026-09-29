@@ -11,13 +11,21 @@ const facultiesBtn = document.querySelector("#faculties-btn");
 const facultyBtn = document.querySelectorAll(".faculty-btn");
 
 charactersTypeBtn.addEventListener("click", () => {
+  categoriesSection.classList.remove("fade-in");
   categoriesSection.classList.remove("is-hidden");
+  setTimeout(() => {
+    categoriesSection.classList.add("fade-in");
+  }, 10);
 
   categoriesSection.scrollIntoView({ behavior: "smooth" });
 });
 
 studentsBtn.addEventListener("click", () => {
   charactersSection.classList.remove("is-hidden");
+  charactersSection.classList.remove("fade-in");
+  setTimeout(() => {
+    charactersSection.classList.add("fade-in");
+  }, 10);
   facultyFilter.classList.add("is-hidden");
 
   charactersSection.scrollIntoView({ behavior: "smooth" });
@@ -27,6 +35,10 @@ studentsBtn.addEventListener("click", () => {
 
 employeesBtn.addEventListener("click", () => {
   charactersSection.classList.remove("is-hidden");
+  charactersSection.classList.remove("fade-in");
+  setTimeout(() => {
+    charactersSection.classList.add("fade-in");
+  }, 10);
   facultyFilter.classList.add("is-hidden");
 
   charactersSection.scrollIntoView({ behavior: "smooth" });
@@ -36,7 +48,12 @@ employeesBtn.addEventListener("click", () => {
 
 facultiesBtn.addEventListener("click", () => {
   charactersSection.classList.remove("is-hidden");
+  charactersSection.classList.remove("fade-in");
+  setTimeout(() => {
+    charactersSection.classList.add("fade-in");
+  }, 10);
   facultyFilter.classList.remove("is-hidden");
+  facultyFilter.classList.add("fade-in");
 
   charactersSection.scrollIntoView({ behavior: "smooth" });
 
@@ -44,16 +61,22 @@ facultiesBtn.addEventListener("click", () => {
 });
 
 facultyBtn.forEach((btn) => {
-  btn.addEventListener("click", (event) => {
+  btn.addEventListener("click", async (event) => {
     const facultyName = event.currentTarget.dataset.faculty;
 
     facultyBtn.forEach((item) => item.classList.remove("active"));
     event.currentTarget.classList.add("active");
 
-    getCharacters(
+    charactersGrid.classList.remove("fade-in");
+
+    await getCharacters(
       `characters/house/${facultyName}`,
       "Персонажі в певному будинку",
     );
+
+    setTimeout(() => {
+      charactersGrid.classList.add("fade-in");
+    }, 10);
   });
 });
 
