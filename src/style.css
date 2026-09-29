@@ -3,8 +3,8 @@
   font-family: "Bluu Next Cyrillic";
   font-weight: bold;
   src:
-    url("/src/fonts/bluu-next-cyrillic.woff2") format("woff2"),
-    url("/src/fonts/bluu-next-cyrillic.woff") format("woff");
+    url("./fonts/bluu-next-cyrillic.woff2") format("woff2"),
+    url("./fonts/bluu-next-cyrillic.woff") format("woff");
 }
 
 @font-face {
@@ -12,9 +12,8 @@
   font-family: "Inter";
   font-weight: 100 900;
   src:
-    url("/src/fonts/Inter-VariableFont_opsz\,wght.ttf") format("truetype"),
-    url("/src/fonts/Inter-Italic-VariableFont_opsz\,wght.ttf")
-      format("truetype");
+    url("./fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype"),
+    url("./fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
 }
 
 *,
@@ -205,8 +204,7 @@ ul {
   height: 740px;
   background-color: var(--hp-background-color);
   background-image:
-    url("/src/assets/hero-section-bg.jpg"),
-    url("/src/assets/hero-section-bg@2x.jpg");
+    url("./assets/hero-section-bg.jpg"), url("./assets/hero-section-bg@2x.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -465,7 +463,7 @@ ul {
 .card-title {
   font-weight: 500;
   font-size: 26px;
-  color: var(--bakery-landing-1-background);
+  color: var(--hp-text-color);
   margin-bottom: 5px;
 }
 
