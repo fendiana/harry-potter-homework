@@ -91,10 +91,13 @@ async function getCharacters(endpoint, titleText) {
   drawCards(data.slice(0, 8));
 }
 
+import arrowIcon from "./assets/arrow-right.svg";
+import placeholderImg from "./assets/placeholder.jpg";
+
 function drawCards(character) {
   const htmlCards = character
     .map((character) => {
-      const imageSrc = character.image || "/src/assets/placeholder.jpg";
+      const imageSrc = character.image || placeholderImg;
       return `
             <li class="characters-grid-card">
               <div class="card-front">
@@ -111,7 +114,7 @@ function drawCards(character) {
                 <button type="button" class="card-more-btn">
                   <span>Більше інформації</span>
                   <img
-                    src="./src/assets/arrow-right.svg"
+                    src="${arrowIcon}"
                     alt="Arrow right with a yellow circle"
                   />
                 </button>
