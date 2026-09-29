@@ -111,7 +111,7 @@ function drawCards(character) {
                 <button type="button" class="card-more-btn">
                   <span>Більше інформації</span>
                   <img
-                    src="/src/assets/arrow-right.svg"
+                    src="./src/assets/arrow-right.svg"
                     alt="Arrow right with a yellow circle"
                   />
                 </button>
