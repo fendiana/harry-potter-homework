@@ -94,7 +94,9 @@ async function getCharacters(endpoint, titleText) {
 function drawCards(character) {
   const htmlCards = character
     .map((character) => {
-      const imageSrc = character.image || "./placeholder.jpg";
+      const imageSrc =
+        character.image ||
+        "https://fendiana.github.io/harry-potter-homework/public/placeholder.jpg";
       return `
             <li class="characters-grid-card">
               <div class="card-front">
@@ -111,7 +113,7 @@ function drawCards(character) {
                 <button type="button" class="card-more-btn">
                   <span>Більше інформації</span>
                   <img
-                    src="./arrow-right.svg"
+                    src="https://fendiana.github.io/harry-potter-homework/public/arrow-right.svg"
                     alt="Arrow right with a yellow circle"
                   />
                 </button>
